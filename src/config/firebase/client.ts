@@ -11,6 +11,7 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_MEASUREMENT_ID
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const app = firebaseClient.apps.length
   ? firebaseClient.app()
   : firebaseClient.initializeApp(firebaseConfig)
@@ -19,4 +20,4 @@ export const persistenceMode = firebaseClient.auth.Auth.Persistence.LOCAL
 
 /* export const getToken = () => firebaseClient.auth().currentUser?.getIdToken()
  */
-export default app
+export { firebaseClient }

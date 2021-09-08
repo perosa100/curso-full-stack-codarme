@@ -12,7 +12,7 @@ import {
   InputLeftAddon
 } from '@chakra-ui/react'
 import { Logo } from 'components/Logo'
-import app from 'config/firebase/client'
+import { firebaseClient } from 'config/firebase/client'
 import { useFormik } from 'formik'
 import Link from 'next/link'
 import React from 'react'
@@ -36,7 +36,7 @@ export default function Signup() {
   } = useFormik({
     onSubmit: async (values) => {
       try {
-        const user = await app
+        const user = await firebaseClient
           .auth()
           .createUserWithEmailAndPassword(values.email, values.password)
         console.log(user)
