@@ -1,6 +1,7 @@
-import logo from './logo.svg'
-
-export const Logo = ({ size }) => (
+type LogoProps = {
+  size: number
+}
+export const Logo = ({ size }: LogoProps) => (
   <svg
     width={size}
     viewBox="0 0 290 80"
